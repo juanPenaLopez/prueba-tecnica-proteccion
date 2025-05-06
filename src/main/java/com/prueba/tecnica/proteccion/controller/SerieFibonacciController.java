@@ -1,6 +1,7 @@
 package com.prueba.tecnica.proteccion.controller;
 
 import com.prueba.tecnica.proteccion.dto.SerieFibonacciDTO;
+import com.prueba.tecnica.proteccion.dto.SerieFibonacciInDTO;
 import com.prueba.tecnica.proteccion.service.SerieFibonacciService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
@@ -31,8 +32,9 @@ public class SerieFibonacciController {
         return new ResponseEntity<>(serieFibonacciService.createSerieFibonacci(), new HttpHeaders(), HttpStatus.OK);
     }
 
-    @PostMapping(path = "/getSerieFibonacci", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<SerieFibonacciDTO> createSerieFibonacci(@RequestBody SerieFibonacciDTO serieFibonacciDTO) {
-        return new ResponseEntity<>(serieFibonacciService.createSerieFibonacci(), new HttpHeaders(), HttpStatus.OK);
+    @Operation(summary = "Genera la serie de fibonacci a partir de una hora indicada")
+    @PostMapping(path = "/createSerieFibonacciByHour", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<SerieFibonacciDTO> createSerieFibonacciByHour(@RequestBody SerieFibonacciInDTO serieFibonacciDTO) {
+        return new ResponseEntity<>(serieFibonacciService.createSerieFibonacciByHour(serieFibonacciDTO), new HttpHeaders(), HttpStatus.OK);
     }
 }

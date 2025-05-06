@@ -7,5 +7,5 @@ import lombok.Data;
 @Builder
 public class SerieFibonacciInDTO {
 
-    private String formatoHora;
+    private String hora;
 }
