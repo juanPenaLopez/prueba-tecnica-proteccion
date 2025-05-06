@@ -1,4 +1,4 @@
-package com.prueba_tecnica_proteccion;
+package com.prueba.tecnica.proteccion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
